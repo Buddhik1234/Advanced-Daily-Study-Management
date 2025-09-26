@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="theme-color" content="#ff9a4c"/>
+    <meta name="description" content="An advanced daily study management and planning application.">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png">
+
+    <title>Advanced Daily Study Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator-wrapper">
+        <div class="control-bar">
+            <button id="theme-switcher" class="theme-switcher-btn" title="Toggle Theme">
+                <span id="theme-icon-container">
+                    </span>
+            </button>
+        </div>
+
+        <div class="calculator-card-container">
+            <div id="converter-card" class="calculator-card">
+                <h1 class="header-title">Number System Converter</h1>
+                <form>
+                    <div class="form-group">
+                        <label for="decimal" class="form-label">Decimal</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="decimal" class="glass-input" placeholder="e.g., 1024" autocomplete="off">
+                            <span class="base-label">Dec</span>
+                            <button type="button" class="copy-btn" title="Copy Decimal" data-target="decimal"></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="hexadecimal" class="form-label">Hexadecimal</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="hexadecimal" class="glass-input" placeholder="e.g., 400" autocomplete="off">
+                            <span class="base-label">Hex</span>
+                            <button type="button" class="copy-btn" title="Copy Hex" data-target="hexadecimal"></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="octal" class="form-label">Octal</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="octal" class="glass-input" placeholder="e.g., 2000" autocomplete="off">
+                            <span class="base-label">Oct</span>
+                             <button type="button" class="copy-btn" title="Copy Octal" data-target="octal"></button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="binary" class="form-label">Binary</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="binary" class="glass-input" placeholder="e.g., 10000000000" autocomplete="off">
+                            <span class="base-label">Bin</span>
+                             <button type="button" class="copy-btn" title="Copy Binary" data-target="binary"></button>
+                        </div>
+                    </div>
+                    <button type="button" id="clear-btn" class="btn btn-clear">Clear All</button>
+                </form>
+            </div>
+
+            <div id="bitwise-card" class="calculator-card">
+                 <h2 class="header-title">Bitwise Operations</h2>
+                 <div class="form-group">
+                    <label class="form-label">Bit Length for NOT (~)</label>
+                    <div class="bit-length-selector">
+                        <input type="radio" id="bits8" name="bit-length" value="8"><label for="bits8">8-bit</label>
+                        <input type="radio" id="bits16" name="bit-length" value="16"><label for="bits16">16-bit</label>
+                        <input type="radio" id="bits32" name="bit-length" value="32" checked><label for="bits32">32-bit</label>
+                        <input type="radio" id="bits64" name="bit-length" value="64"><label for="bits64">64-bit</label>
+                    </div>
+                 </div>
+                 <div class="form-group">
+                    <label for="operand-a" class="form-label">Operand A (Decimal)</label>
+                    <input type="text" id="operand-a" class="glass-input" placeholder="Enter first number" autocomplete="off">
+                 </div>
+                 <div class="form-group">
+                    <label for="operand-b" class="form-label">Operand B (Decimal)</label>
+                    <input type="text" id="operand-b" class="glass-input" placeholder="Enter second number" autocomplete="off">
+                 </div>
+                 <div class="op-buttons">
+                    <button class="btn btn-op" data-op="and">AND</button>
+                    <button class="btn btn-op" data-op="or">OR</button>
+                    <button class="btn btn-op" data-op="xor">XOR</button>
+                    <button class="btn btn-op" data-op="not">NOT A</button>
+                    <button class="btn btn-op" data-op="lshift">A &lt;&lt; B</button>
+                    <button class="btn btn-op" data-op="rshift">A &gt;&gt; B</button>
+                 </div>
+                 <div class="result-box" id="bitwise-result-box">
+                    <h3 class="result-title">Result</h3>
+                    <p id="bitwise-result">Perform an operation to see the result.</p>
+                 </div>
+            </div>
+
+             <div id="char-converter-card" class="calculator-card">
+                <h2 class="header-title">Character Code</h2>
+                <div class="form-group">
+                    <label for="char-input" class="form-label">Enter a Character</label>
+                    <input type="text" id="char-input" class="glass-input" placeholder="e.g., K" maxlength="1" autocomplete="off">
+                </div>
+                <div class="result-box" id="char-result-box">
+                     <h3 class="result-title">Codes</h3>
+                    <p id="char-result">Enter a character to see its codes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
